@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       dot.addEventListener('mouseleave', () => {
         title.textContent = "Hover over a dot";
-        desc.textContent = "You’ll see details of your experience here.";
+        desc.textContent = "You’ll see details of my experience here.";
         location.textContent = "";
       });
     });
