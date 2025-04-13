@@ -1,0 +1,657 @@
+/*Main font */
+
+* {
+  font-family: 'Lekton', sans-serif;
+}
+
+
+
+
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: orange;
+  text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  padding: 20px 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+/* Hero */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  will-change: transform;
+}
+
+
+.hero-text-box {
+  position: relative;
+  z-index: 1;
+  background-color: black;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+/* Work */.work-timeline {
+  background-color: black;
+  padding: 100px 20px;
+  color: white;
+  position: relative;
+}
+
+.work-description {
+  margin-top: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+}
+
+.work-description h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.work-description p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.work-description .location-text {
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+
+.timeline-track {
+  position: relative;
+  height: 100px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.timeline-track::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* center line vertically */
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Dots + labels */
+.dot-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-22%);
+
+  text-align: center;
+  z-index: 2;
+}
+
+
+
+.edge-wrapper_start {
+  position: absolute;
+  top: 50%;
+  transform: translate(70%,-22%);
+  text-align: center;
+  z-index: 2;
+}
+
+.edge-wrapper_end {
+  position: absolute;
+  top: 50%;
+  transform: translate(-150%,-22%);
+  text-align: center;
+  z-index: 2;
+}
+
+
+
+
+.dot {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.label_work {
+  margin-top: 4px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+
+.year-label {
+  
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Year labels */
+.timeline-year {
+  position: absolute;
+  top: 0;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.timeline-year.left {
+  left: 0;
+}
+
+.timeline-year.right {
+  right: 0;
+}
+
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  background-color: #111;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  max-width: 260px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+
+
+/* logos */
+
+.tech-scroll-section {
+  background-color: #111;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.scroll-container {
+  overflow: visible; /* allow logos to scale outside the container */
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.scroll-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 40s linear infinite;
+}
+
+.scroll-track img {
+  width: 70px;                    /* smaller size */
+  height: auto;
+  margin: 0 40px;                 /* more space between icons */
+  object-fit: contain;
+  filter: brightness(1.4) grayscale(100%) contrast(0%);  /* light grey tone */
+  opacity: 0.9;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.scroll-track img:hover {
+  transform: scale(1.15);
+
+  filter: brightness(3) grayscale(100%) contrast(0%);
+  opacity: 1;
+}
+
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
+
+
+/* Section Styling */
+.section {
+  padding: 100px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gray-bg {
+  background-color: #111111;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: white;          /* Force full brightness */
+  text-align: center;
+}
+
+.section-title {
+  position: relative;
+  z-index: 2;
+}
+
+
+.section-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.center {
+  text-align: center;
+}
+
+/*Projects*/
+
+.carousel-section {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.carousel-text {
+  z-index: 3;
+  color: white;
+  max-width: 500px;
+}
+
+.carousel-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.carousel-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4);
+  z-index: 1;
+}
+
+.carousel-tabs {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-tabs .tab {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ccc;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.carousel-tabs .tab:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.carousel-tabs .tab.active {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #111;
+  font-weight: bold;
+}
+
+
+.carousel-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  border: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0; /* pointy corners */
+  font-weight: 600;
+}
+
+.carousel-button:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.carousel-subtitle {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bbbbbb;
+  margin-bottom: 10px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* Education */
+
+.timeline-section {
+  padding: 100px 20px;
+  background-color: black;
+  color: white;
+  max-width: 800px;
+  margin: auto;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 50px;
+  padding-left: 50px; /* was 30px */
+  border-left: 2px solid white;
+}
+
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0;
+  left: -11px;  /* slightly to the left of the line */
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+
+.timeline-content h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.timeline-content .year {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #aaa;
+  margin-left: 10px;
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.timeline-content {
+  margin-left: 20px;
+}
+
+.timeline-section {
+  position: relative;
+  padding: 100px 20px;
+  color: white;
+  width: 100%;
+  max-width: none; /* remove centering constraint */
+  z-index: 1;
+  overflow: hidden;
+}
+
+
+
+.education-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;          /* Full viewport width */
+  height: 100%;          /* Full section height */
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.15;         /* Keep it subtle */
+  pointer-events: none;
+}
+
+
+.timeline,
+.timeline-title,
+.timeline-item {
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional: overlay to darken it slightly */
+.timeline-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+
+/* Contact */
+
+.contact-section {
+  background-color: #0b0b0b;
+  padding: 100px 20px;
+  color: white;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap; /* mobile-friendly */
+}
+
+.contact-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.contact-box {
+  max-width: 500px;
+  text-align: left;
+}
+
+.contact-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contact-subtext {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  font-size: 1rem;
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.contact-item a:hover {
+  color: orange;
+}
+
+.label {
+  color: #aaaaaa;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px;
+  background-color: black;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+
+
